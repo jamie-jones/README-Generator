@@ -3,21 +3,11 @@ const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // array of questions for user
-// const questions = [
-//   "What is the title of your project?",
-//   "Describe your project.",
-//   "What are the installation instructions?",
-//   "What is the usage information?",
-//   "Who or what are the contributors to yor project?",
-//   "What are the text instructions?",
-//   "Choose a license,",
-//   "What is your GitHub username?",
-//   "What is your email?",
-// ];
+const questions = [];
 
 // function to write README file
 function writeToFile(fileName, data) {
-  fs.writeToFile(fileName, data, function (err) {
+  fs.writeFile(fileName, data, function (err) {
     if (err) {
       throw err;
     }
@@ -77,7 +67,7 @@ function init() {
     ])
     .then(function (response) {
       const generateMD = generateMarkdown(response);
-      writeToFile("README.md", generateMD);
+      writeToFile("testingREADME.md", generateMD);
     });
 }
 
