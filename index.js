@@ -3,17 +3,17 @@ const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // array of questions for user
-const questions = [
-  "What is the title of your project?",
-  "Describe your project.",
-  "what are the installation instructions?",
-  "What is the usage information?",
-  "Who or what are the contributors to yor project?",
-  "What are the text instructions?",
-  "Choose a license,",
-  "What is your GitHub username?",
-  "What is your email?",
-];
+// const questions = [
+//   "What is the title of your project?",
+//   "Describe your project.",
+//   "What are the installation instructions?",
+//   "What is the usage information?",
+//   "Who or what are the contributors to yor project?",
+//   "What are the text instructions?",
+//   "Choose a license,",
+//   "What is your GitHub username?",
+//   "What is your email?",
+// ];
 
 // function to write README file
 function writeToFile(fileName, data) {
@@ -31,47 +31,47 @@ function init() {
     .prompt([
       {
         type: "input",
-        message: questions[0],
+        message: "What is the title of your project?",
         name: "title",
       },
       {
         type: "input",
-        message: questions[1],
+        message: "Describe your project.",
         name: "description",
       },
       {
         type: "input",
-        message: questions[2],
+        message: "What are the installation instructions?",
         name: "installation",
       },
       {
         type: "input",
-        message: questions[3],
+        message: "What is the usage information?",
         name: "usage",
       },
       {
         type: "input",
-        message: questions[4],
+        message: "Who or what are the contributors to yor project?",
         name: "contributing",
       },
       {
         type: "input",
-        message: questions[5],
+        message: "What are the test instructions?",
         name: "tests",
       },
       {
         type: "input",
-        message: questions[6],
+        message: "Choose a license,",
         name: "license",
       },
       {
         type: "input",
-        message: questions[7],
+        message: "What is your GitHub username?",
         name: "username",
       },
       {
         type: "input",
-        message: questions[8],
+        message: "What is your email?",
         name: "link",
       },
     ])
