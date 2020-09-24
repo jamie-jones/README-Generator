@@ -2,9 +2,6 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
-// array of questions for user
-const questions = [];
-
 // function to write README file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, function (err) {
@@ -36,24 +33,24 @@ function init() {
       },
       {
         type: "input",
-        message: "What is the usage information?",
+        message: "What is the application's used for?",
         name: "usage",
       },
       {
         type: "input",
-        message: "Who or what are the contributors to yor project?",
+        message: "Who or what are the contributors to your project?",
         name: "contributing",
       },
       {
         type: "input",
-        message: "What are the test instructions?",
+        message: "What are the testing instructions?",
         name: "tests",
       },
       {
         type: "list",
         message: "Choose a license,",
         name: "license",
-        choices: ["MIT", "WTFPL", "SIL", "GitHub"],
+        choices: ["MIT", "WTFPL", "SIL", "Mozilla"],
       },
       {
         type: "input",
