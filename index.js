@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require("./utils/generateMarkdown");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // array of questions for user
 const questions = [
@@ -12,14 +12,12 @@ const questions = [
   "What are the text instructions?",
   "Choose a license,",
   "What is your GitHub username?",
-  "What is the link to your GitHub?",
   "What is your email?",
-  "How can someone reach you?",
 ];
 
 // function to write README file
 function writeToFile(fileName, data) {
-  writeToFile(fileName, data, function (err) {
+  fs.writeToFile(fileName, data, function (err) {
     if (err) {
       throw err;
     }
@@ -29,70 +27,58 @@ function writeToFile(fileName, data) {
 // function to initialize program
 function init() {
   // PROMPT FOR ALL OF THE QUESTIONS
-  inquirer.prompt;
-  [
-    {
-      type: "input",
-      message: questions[0],
-      name: "title",
-    },
-    {
-      type: "input",
-      message: questions[1],
-      name: "description",
-    },
-    {
-      type: "input",
-      message: questions[2],
-      name: "installation",
-    },
-    {
-      type: "input",
-      message: questions[3],
-      name: "usage",
-    },
-    {
-      type: "input",
-      message: questions[4],
-      name: "contributing",
-    },
-    {
-      type: "input",
-      message: questions[5],
-      name: "tests",
-    },
-    {
-      type: "checkbox",
-      message: questions[6],
-      name: "license",
-    },
-    {
-      type: "input",
-      message: questions[7],
-      name: "username",
-    },
-    {
-      type: "input",
-      message: questions[8],
-      name: "link",
-    },
-    {
-      type: "input",
-      message: questions[9],
-      name: "email",
-    },
-    {
-      type: "input",
-      message: questions[10],
-      name: "contact",
-    },
-  ].then(function (response) {
-    if (response.confirm === response.password) {
-      console.log("Success!");
-    } else {
-      console.log("You forgot your password already?!");
-    }
-  });
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: questions[0],
+        name: "title",
+      },
+      {
+        type: "input",
+        message: questions[1],
+        name: "description",
+      },
+      {
+        type: "input",
+        message: questions[2],
+        name: "installation",
+      },
+      {
+        type: "input",
+        message: questions[3],
+        name: "usage",
+      },
+      {
+        type: "input",
+        message: questions[4],
+        name: "contributing",
+      },
+      {
+        type: "input",
+        message: questions[5],
+        name: "tests",
+      },
+      {
+        type: "input",
+        message: questions[6],
+        name: "license",
+      },
+      {
+        type: "input",
+        message: questions[7],
+        name: "username",
+      },
+      {
+        type: "input",
+        message: questions[8],
+        name: "link",
+      },
+    ])
+    .then(function (response) {
+      const generateMD = generateMarkdown(response);
+      writeToFile("README.md", generateMD);
+    });
 }
 
 // function call to initialize program
