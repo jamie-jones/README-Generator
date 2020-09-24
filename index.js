@@ -50,9 +50,10 @@ function init() {
         name: "tests",
       },
       {
-        type: "input",
+        type: "list",
         message: "Choose a license,",
         name: "license",
+        choices: ["MIT", "WTFPL", "SIL", "GitHub"],
       },
       {
         type: "input",
@@ -62,7 +63,7 @@ function init() {
       {
         type: "input",
         message: "What is your email?",
-        name: "link",
+        name: "email",
       },
     ])
     .then(function (response) {

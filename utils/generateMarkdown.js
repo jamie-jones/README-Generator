@@ -1,10 +1,9 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-  let licenseText = "";
-  if (data.license === "MIT") {
-    licenseText = "This application is licensed under the MIT license...";
-  }
-  return `# TITLE
+  return `
+  ![License](http//img.shields.io/static/v1?label=${data.license}&message=${data.username}>&color=<COLOR>)
+  
+  # TITLE
   ${data.title}
   
   ## DESCRIPTION
@@ -16,7 +15,7 @@ function generateMarkdown(data) {
   *[License](#License)
   *[Contributing](#Contributing)
   *[Tests](#Tests)
-  #[Questions](#Questions)
+  *[Questions](#Questions)
   
   ## INSTALLATION 
   ${data.installation}
@@ -36,7 +35,7 @@ function generateMarkdown(data) {
   ## QUESTIONS
   For any questions, contact me:
 
-  Github: ${data.username}
+  Github: https://www.github.com/${data.username}
   email: ${data.email}
 `;
 }
