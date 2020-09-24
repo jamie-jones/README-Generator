@@ -1,37 +1,46 @@
 
-  ![License](http//img.shields.io/static/v1?label=WTFPL&message=l>&color=<COLOR>)
+  ![License](https://img.shields.io/badge/MIT-jamjon94-green)
   
-  # TITLE
-  l
+  # README Generator
   
   ## DESCRIPTION
-  l
+  generating a readme
   
   ## TABLE OF CONTENTS
   *[Installation](#Installation)
+  
   *[Usage](#Usage)
+
   *[License](#License)
+
   *[Contributing](#Contributing)
+
   *[Tests](#Tests)
+
   *[Questions](#Questions)
   
   ## INSTALLATION 
-  l
+  open it and use it
   
   ## USAGE
-  l
+  generating readmes
   
   ## LICENSE
-  WTFPL
+  This application is licensed under the MIT license.
+
+  Find out more about the license here:
+
+  (https://opensource.org/licenses/MIT)
   
   ## CONTRIBUTING
-  l
+  me and the classmates
 
   ## TESTS
-  l
+  testing 1 2 3
 
   ## QUESTIONS
   For any questions, contact me:
 
-  Github: https://www.github.com/l
-  email: l
+  Github: https://www.github.com/jamjon94
+  
+  email: jamie.mar.jones14@gmail.com
